@@ -12,8 +12,11 @@ export default provideState([
     leftLeg: false,
     rightLeg: false,
     legUnit: false,
+    selectedPart: false,
+    selectedSide: false,
   },
   {
+    selectPart: update((actions, selectedPart, selectedSide) => ({ selectedPart, selectedSide })),
     setName: update((actions, robotName) => {
       console.log('robotName:', robotName);
       return () => ({ robotName });

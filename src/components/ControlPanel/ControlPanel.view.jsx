@@ -1,40 +1,63 @@
 import { PureComponent } from 'react';
-import { Input } from 'antd';
+import svgJS from 'svg.js';
+import ReactSVG from 'react-svg';
+import ControlPanel from './../ControlPanel';
 
-export default class ControlPanel extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { name: props.state.robotName };
-  }
+const SCALE = 0.5;
 
-  onChange(event) {
-    const name = event.target.value;
-    this.setState({ name }, () => {
-      this.props.actions.setName(name);
+export default class Store extends PureComponent {
+  annotateSVG(svg) {
+    const { actions } = this.props;
+    const root = svgJS(svg);
+    'Head,Torso'.split(',').forEach((part) => {
+      root.select(`#Skeleton${part}Selector`)
+        .on('click', (event) => {
+          event.preventDefault();
+          actions.selectPart('center', part.toLowerCase());
+        });
     });
-  }
 
-  title() {
-    const { selectedPart, selectedSide } = this.props.state;
-    if (!selectedPart) {
-      return 'Click on a blue dottedLine area to select a part';
-    }
-
-    return ['Selected: ', selectedPart || '', selectedSide].join(' ');
+    'Leg,Arm'.split(',')
+      .forEach((part) => {
+        'Left,Right'.split(',')
+          .forEach((side) => {
+            root.select(`#Skeleton${side}${part}Selector`)
+              .on('click', (event) => {
+                event.preventDefault();
+                actions.selectPart(side.toLowerCase(), part.toLowerCase());
+              });
+          });
+      });
   }
 
   render() {
+    const { state } = this.props;
     return (
-      <div>
-        <h2>{this.title()}</h2>
-        <p>
-          Set Robot name:
-          <Input
-            value={this.state.name}
-            onChange={event => this.onChange(event)}
-          />
-        </p>
-      </div>
+      <section>
+        <h1>Domo Arigato, {state.robotName}</h1>
+        <ControlPanel />
+        <ReactSVG
+          src="bots/SkeletonBot.svg"
+          evalScripts="always"
+          fallback={() => <span>Error!</span>}
+          loading={() => <span>Loading</span>}
+          onInjected={(error, svg) => {
+            if (error) {
+              console.error(error);
+              return;
+            }
+            this.annotateSVG(svg);
+          }}
+          renumerateIRIElements={false}
+          svgStyle={{
+            width: 955 * SCALE,
+            height: 1393 * SCALE,
+          }}
+          onClick={() => {
+            console.log('wrapper onClick');
+          }}
+        />
+      </section>
     );
   }
 }

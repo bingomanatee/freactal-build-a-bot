@@ -16,7 +16,7 @@ export default provideState([
     selectedSide: false,
   },
   {
-    selectPart: update((actions, selectedPart, selectedSide) => ({ selectedPart, selectedSide })),
+    selectPart: update((actions, selectedPart, selectedSide) => () => ({ selectedPart, selectedSide })),
     setName: update((actions, robotName) => {
       console.log('robotName:', robotName);
       return () => ({ robotName });

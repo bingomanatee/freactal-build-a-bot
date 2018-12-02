@@ -16,14 +16,12 @@ should work fine but I'm not doing cross - deployment tests at this point.
 
 ## Stage Two
 
-Looks like we had to set the input from First Stage and buffer it in state to prevent feedback issues
-from disturbing your input cursor. This is a side effect of Freactal's asynchronous nature.
-
-Oh well.
-
 We're adding the next stage - a selector paradigm for our robot building.
 
 Importing SVG with a few support libraries - `react-svg` to get the robot images and `svg.js` to hook
 events (and hopefully do some parsing for the parts) into the action paradigm. 
 
-Also we're moving the input and some feedback from the SVG clicks into a "control panel" banner
+Also we're moving the input and some feedback from the SVG clicks into a "control panel" banner.
+
+Note one of the advantages to Freactal is that as state is transported to all listeners, we can 
+slide over the functionality of the name field laterally a little easier.

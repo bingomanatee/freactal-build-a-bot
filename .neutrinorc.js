@@ -6,6 +6,7 @@ module.exports = {
           'rules': {
             'import/extensions': 0,
             'react/prop-types': 'off',
+            'react/prefer-stateless-function': 'warn',
             'no-underscore-dangle': 'off',
             'object-shorthand': 'off',
             'func-names': 'off',

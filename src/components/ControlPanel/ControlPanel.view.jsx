@@ -4,7 +4,7 @@ import { Input } from 'antd';
 export default class ControlPanel extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { name: this.props.robotName };
+    this.state = { name: props.state.robotName };
   }
 
   onChange(event) {
@@ -30,7 +30,7 @@ export default class ControlPanel extends PureComponent {
         <p>
           Set Robot name:
           <Input
-            value={this.state.robotName}
+            value={this.state.name}
             onChange={event => this.onChange(event)}
           />
         </p>

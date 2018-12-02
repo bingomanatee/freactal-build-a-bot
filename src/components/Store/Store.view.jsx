@@ -1,16 +1,17 @@
 import { PureComponent } from 'react';
+import svgJS from 'svg.js';
+import ReactSVG from 'react-svg';
+import ControlPanel from './../ControlPanel';
+
+const SCALE = 0.5;
 
 export default class Store extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   annotateSVG(svg) {
-    const {actions} = this.props;
+    const { actions } = this.props;
     const root = svgJS(svg);
     'Head,Torso'.split(',').forEach((part) => {
       root.select(`#Skeleton${part}Selector`)
-        .on('click', function (event) {
+        .on('click', (event) => {
           event.preventDefault();
           actions.selectPart('center', part.toLowerCase());
         });
@@ -21,7 +22,7 @@ export default class Store extends PureComponent {
         'Left,Right'.split(',')
           .forEach((side) => {
             root.select(`#Skeleton${side}${part}Selector`)
-              .on('click', function (event) {
+              .on('click', (event) => {
                 event.preventDefault();
                 actions.selectPart(side.toLowerCase(), part.toLowerCase());
               });
@@ -30,7 +31,7 @@ export default class Store extends PureComponent {
   }
 
   render() {
-    const {state} = this.props;
+    const { state } = this.props;
     return (
       <section>
         <h1>Domo Arigato, {state.robotName}</h1>
@@ -57,7 +58,6 @@ export default class Store extends PureComponent {
           }}
         />
       </section>
-    );
     );
   }
 }

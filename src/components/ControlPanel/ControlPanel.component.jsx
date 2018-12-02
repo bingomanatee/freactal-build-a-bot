@@ -2,6 +2,7 @@ import { provideState, injectState, update } from '@wonderlandlabs/freactal-conn
 import ControlPanelView from './ControlPanel.view.jsx';
 
 console.log('provideState', provideState, 'update:', update);
+
 export default provideState([
   {
     robotName: 'Mr. Roboto',
@@ -17,8 +18,6 @@ export default provideState([
   },
   {
     selectPart: update((actions, selectedPart, selectedSide) => () => ({ selectedPart, selectedSide })),
-    setName: update((actions, robotName) => {
-      return () => ({ robotName });
-    }),
+    setName: update((actions, robotName) => () => ({ robotName })),
   },
 ])(injectState(ControlPanelView));

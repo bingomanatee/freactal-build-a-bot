@@ -14,10 +14,9 @@ export default provideState([
     legUnit: false,
   },
   {
-    setName: update((context, robotName) => {
-      console.log('context: ', context);
+    setName: update((actions, robotName) => {
       console.log('robotName:', robotName);
-      return { robotName };
+      return () => ({robotName});
     }),
   },
 ])(injectState(StoreView));

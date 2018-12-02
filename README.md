@@ -2,8 +2,8 @@ This is an experiment in deploying and using Freactal 3. The premise is "build a
 (with robots); basically a choose a component system with a central robot model. 
 
 In this the first stage, we apply a root model to the store and do a quick POC with a name for the robot. 
-Note, in the original Freactal, there was a sync problem between input field values and state
-which doesn't seem to be present... so far. 
+Note, because Freactal is Asynchronous we buffer name through local state to prevent entry issues from
+disturbing the interaction with the input. (this is an existing Freactal situation.)
 
 ## System notes
 

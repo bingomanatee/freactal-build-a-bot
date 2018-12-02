@@ -346,12 +346,13 @@
     webpack-sources "1.0.1"
     worker-loader "^1.1.1"
 
-"@wonderlandlabs/freactal-connect@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@wonderlandlabs/freactal-connect/-/freactal-connect-1.0.6.tgz#91a9536ba688ab19560e8f1317566711e7607730"
-  integrity sha512-f4uBGrdDK1rcwFI/k6MWmTGEqkFrq5MwW+bF8FBAppzLDDAHM2vfbYl6nK2MD3qJA/k6+1SMsdvLS8bG+2uEUQ==
+"@wonderlandlabs/freactal-connect@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@wonderlandlabs/freactal-connect/-/freactal-connect-1.0.8.tgz#c82621422b4a8553fed694d47aa25a051a068a86"
+  integrity sha512-jORYio3Yz4Fyv5o0/Qnk+ImhyxFrn4DxFCUK9nzmJT4CXiOMn2goO22Fd6iyomLtajs8TaS8j3mMB8E2N9HMKg==
   dependencies:
     "@wonderlandlabs/freactal-engine" "^1.0.5"
+    lodash.get "^4.4.2"
 
 "@wonderlandlabs/freactal-engine@^1.0.5":
   version "1.0.5"

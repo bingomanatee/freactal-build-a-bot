@@ -25,3 +25,17 @@ Also we're moving the input and some feedback from the SVG clicks into a "contro
 
 Note one of the advantages to Freactal is that as state is transported to all listeners, we can 
 slide over the functionality of the name field laterally a little easier.
+
+## Stage Three
+
+We create a component to pick the part for each area of the robot. When a side is selected,
+we show an antD menu that calls an action from the parent state to assgin that choice
+to the active body part. This demonstrates how even in a sub-state, you havae access
+to actions from a parent. At this point we have no visual feedback for our choice ... that's to come. 
+
+## Stage Four
+
+The last stage is to integrate the sprite data for the robots' various parts with
+the stage. Data is passed down from the menu's record of sprite data for each
+of the kinds of robots, part by part, to the stage, and rendered in a new
+"Part.view" component. 

@@ -1,8 +1,6 @@
 import { provideState, injectState, update } from '@wonderlandlabs/freactal-connect';
 import ControlPanelView from './ControlPanel.view.jsx';
 
-console.log('provideState', provideState, 'update:', update);
-
 export default provideState([
   {
     robotName: 'Mr. Roboto',

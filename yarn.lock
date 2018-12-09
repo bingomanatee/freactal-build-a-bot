@@ -371,18 +371,18 @@
   resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-2.1.1.tgz#e9bc12d87d2d1adfcaa46c17c9f481c563ee9d88"
   integrity sha512-wuiBXgwu3aOdnOgNVM/4L/6nh3z/DGJCFuXgPv/iiDWQk0wgLsp/Olnmxn+iHr90Js/9JAhQZuaHTf5/1nrqOw==
 
-"@wonderlandlabs/freactal-connect@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@wonderlandlabs/freactal-connect/-/freactal-connect-1.0.8.tgz#c82621422b4a8553fed694d47aa25a051a068a86"
-  integrity sha512-jORYio3Yz4Fyv5o0/Qnk+ImhyxFrn4DxFCUK9nzmJT4CXiOMn2goO22Fd6iyomLtajs8TaS8j3mMB8E2N9HMKg==
+"@wonderlandlabs/freactal-connect@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@wonderlandlabs/freactal-connect/-/freactal-connect-1.0.9.tgz#6a3d9667e4cd6bd60a1f705895b474bc4314a4d4"
+  integrity sha512-CvwXiA8/BaOs1BLceHsgfwYS+Uirbg2gDdo5872vIkeskeQfTmgsMJzLc3RGrjmZg9OqwuqADaTwguExSOZJyA==
   dependencies:
-    "@wonderlandlabs/freactal-engine" "^1.0.5"
+    "@wonderlandlabs/freactal-engine" "^1.0.6"
     lodash.get "^4.4.2"
 
-"@wonderlandlabs/freactal-engine@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@wonderlandlabs/freactal-engine/-/freactal-engine-1.0.5.tgz#c9827f434c9f40536993d60b6e975c6073f5bf8a"
-  integrity sha512-qhD7vm1dUDM4vB1nW5mpnZICdIke1kxw0YNKyisHowWlvLgjUPJt232UHc62hylProCSo3ZAI653xLYUxXi9/g==
+"@wonderlandlabs/freactal-engine@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@wonderlandlabs/freactal-engine/-/freactal-engine-1.0.6.tgz#3c7c762ec6ea84f7a482e63e0466d65ce56aea3b"
+  integrity sha512-Pv6vZ+h8onFlTUz446tkHxrlXnKDBChduvo/EYF1Hm8V23NVCFHpuAN7K3eSfyOz0HSNZJ3MatH5AwSG+n9HtA==
   dependencies:
     bottlejs "^1.7.1"
     lodash.clonedeep "^4.5.0"

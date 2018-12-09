@@ -10,7 +10,7 @@
     "test": "neutrino test"
   },
   "dependencies": {
-    "@wonderlandlabs/freactal-connect": "^1.0.8",
+    "@wonderlandlabs/freactal-connect": "^1.0.9",
     "antd": "^3.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",

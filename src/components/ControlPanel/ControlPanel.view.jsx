@@ -1,5 +1,6 @@
 import { PureComponent } from 'react';
 import { Input } from 'antd';
+import Menu from '../Menu';
 
 export default class ControlPanel extends PureComponent {
   constructor(props) {
@@ -9,8 +10,8 @@ export default class ControlPanel extends PureComponent {
 
   onChange(event) {
     const name = event.target.value;
-    this.setState({ name }, () => {
-      this.props.actions.setName(name);
+    this.props.actions.setName(name);
+    if (!this.isUnmounted) this.setState({ name }, () => {
     });
   }
 
@@ -23,10 +24,13 @@ export default class ControlPanel extends PureComponent {
     return ['Selected: ', selectedPart || '', selectedSide].join(' ');
   }
 
+  componentWillUnmount() {
+    this.isUnmounted = true;
+  }
+
   render() {
     return (
       <div>
-        <h2>{this.title()}</h2>
         <p>
           Set Robot name:
           <Input
@@ -34,6 +38,8 @@ export default class ControlPanel extends PureComponent {
             onChange={event => this.onChange(event)}
           />
         </p>
+        <h2>{this.title()}</h2>
+        {this.props.state.selectedPart && <Menu />}
       </div>
     );
   }
